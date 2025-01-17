@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import pageClasses.HomePage;
 
 public class HomePageTest extends BaseTest {
+	
+	//CustomerLoginTest clt = new CustomerLoginTest();
 	@Test
 	public void verifyCreateAccountLinkOnHomePage() {
 		HomePage hp = new HomePage(driver);
@@ -15,10 +17,10 @@ public class HomePageTest extends BaseTest {
 		hp.enterPassword(); // enter password
 		hp.reEnterPassword(); // confirm password
 		hp.submitForm(); // click on submit button
-		hp.signInHeaderLink(); // click on signIn link
-		hp.enterEmailOnSignInPage(); // enter email in sign in page
-		hp.enterPasswordOnSignInPage(); // enter password in sign in page
-		hp.clickSignInButtonOnSignInPage(); // click on signIn button on sign in page
+		//hp.signInHeaderLink(); // click on signIn link
+		//clt.cstmrLogin();
+
+		
 
 	}
 }

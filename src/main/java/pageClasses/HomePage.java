@@ -10,6 +10,8 @@ public class HomePage {
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 	}
+	//CustomerLoginPage clp;
+	
 
 	// locators
 	// create new account link
@@ -26,14 +28,7 @@ public class HomePage {
 	private By cnfrmPswa = By.xpath("//input[@id='password-confirmation']");
 	// submit button
 	private By sbmt = By.cssSelector("button.action.submit.primary");
-	// Sign In link
-	private By sgnInLink = By.xpath("//header[@class='page-header']//li[@class='authorization-link']/a");
-	// email text field on signIn page
-	private By sgnInEmail = By.xpath("//input[@id='email']");
-	// password text field on signIn page
-	private By sgnInPswd = By.xpath("//input[@name='login[password]']");
-	// signIn button
-	private By sgnBtn = By.xpath("(//div[@class='primary'])[1]/button");
+	
 
 	public void createAccountClick() {
 		driver.findElement(createAccountLink).click();
@@ -70,28 +65,14 @@ public class HomePage {
 	}
 
 	// click on submit
-	public void submitForm() {
+	public CustomerLoginPage submitForm() {
 		driver.findElement(sbmt).click();
+		return new CustomerLoginPage(driver);
 	}
 
-	// click on SignInLink
-	public void signInHeaderLink() {
-		driver.findElement(sgnInLink).click();
+	
 	}
 
-	// enter email on signIn text field
-	public void enterEmailOnSignInPage() {
-		driver.findElement(sgnInEmail).sendKeys("JohnCena@gmail.com");
-	}
+	
 
-	// enter password on signIn test field
-	public void enterPasswordOnSignInPage() {
-		driver.findElement(sgnInPswd).sendKeys("Cena1234");;
-	}
 
-	// click on signIn button on signIn page
-	public void clickSignInButtonOnSignInPage() {
-		driver.findElement(sgnBtn).click();
-	}
-
-}

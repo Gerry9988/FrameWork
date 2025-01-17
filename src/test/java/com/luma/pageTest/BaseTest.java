@@ -8,12 +8,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import utils.BaseUtils;
 
 public class BaseTest {
-	WebDriver driver;
+	protected WebDriver driver;
 	
 	@BeforeMethod
 	public void launchSite() throws IOException {
@@ -44,5 +45,9 @@ public class BaseTest {
 		driver.navigate().to(BaseUtils.getConfigValue("url"));
 
 	}
+	
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();	}
 
 }
